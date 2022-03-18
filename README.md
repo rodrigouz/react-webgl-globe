@@ -22,7 +22,7 @@ v14.17.5
 8.5.1
 ```
 
-## Getting Started
+# Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
@@ -38,12 +38,19 @@ Use npm to install all the dependencies.
 ```sh
 $ npm i 
 ```
-**Demo Mode**
+## Demo Mode
 ```sh
 $ cd example
 $ npm i && npm start 
 ```
 
+# Usage
+Instruction to install the npm package `react-webgl-globe` and how to use it.
+
+```sh
+npm install react-webgl-globe 
+
+```
 
 ## Data Format
 
@@ -51,4 +58,41 @@ The following illustrates the **data** prop format that the React WebGL Globe ex
 
 ```javascript
 const data =  [ latitude, longitude, magnitude, latitude, longitude, magnitude, ... ];
+```
+## Provide data prop
+
+```javascript
+function GlobeContainer() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const xhr = new XMLHttpRequest();
+    xhr.open(
+      "GET",
+      "https://raw.githubusercontent.com/dataarts/webgl-globe/master/globe/population909500.json",
+      true
+    );
+    xhr.onreadystatechange = function (e) {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          var data = JSON.parse(xhr.responseText);
+          setData(data[0][1]);//rendering only 1990 population
+        }
+      }
+    };
+    xhr.send(null);
+  }, []);
+
+  return (
+    <div>
+      <Globe
+        data={data}
+        width={800}
+        height={480}
+      />
+    </div>
+  );
+}
+
+export {GlobeContainer};
 ```
