@@ -19,7 +19,7 @@ const App = () => {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
           var data = JSON.parse(xhr.responseText);
-          setData(data[0][1]);
+          setData(data[0][1]); //rendering only 1990 population
         }
       }
     };

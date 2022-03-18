@@ -17,9 +17,8 @@ To make sure you have them available on your machine,
 try running the following command.
 
 ```sh
-$ npm -v && yarn -v
+$ npm -v
 8.5.1
-1.22.5
 ```
 
 ## Getting Started
@@ -34,14 +33,20 @@ Start with cloning this repo on your local machine:
 $ git clone git@github.com:rodrigouz/react-webgl-globe.git
 $ cd react-webgl-globe
 ```
-Use yarn to install all the dependencies.
+Use npm to install all the dependencies.
 ```sh
-$ yarn 
+$ npm i 
+```
+**Demo Mode**
+```sh
+$ cd example
+$ npm i && npm start 
 ```
 
-# Data Format
 
-The following illustrates the `JSON` data format that the globe expects:
+## Data Format
+
+The following illustrates the **data** prop format that the React WebGL Globe expects in order to render the geographic data provided.
 
 ```javascript
 const data =  [ latitude, longitude, magnitude, latitude, longitude, magnitude, ... ];
