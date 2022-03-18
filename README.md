@@ -11,13 +11,14 @@ The React WebGL Globe is an open source react component  for geographic data vis
 
 # Prerequisites
 
-This project requires NodeJS (version 10 or later) and Yarn.
-[Node](http://nodejs.org/) and [Yarn](https://yarnpkg.com/) are really easy to install.
+This project requires NodeJS (version 14 or later).
+[Node](http://nodejs.org/) is really easy to install.
 To make sure you have them available on your machine,
 try running the following command.
 
 ```sh
-$ npm -v
+$ node -v && npm -v
+v14.17.5
 8.5.1
 ```
 
