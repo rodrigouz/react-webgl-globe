@@ -52,16 +52,21 @@ npm install react-webgl-globe
 
 ```
 
-## Data Format
+## Data prop Format
 
 The following illustrates the **data** prop format that the React WebGL Globe expects in order to render the geographic data provided.
 
 ```javascript
 const data =  [ latitude, longitude, magnitude, latitude, longitude, magnitude, ... ];
 ```
-## Provide data prop
+## How to provide data prop
+
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://codesandbox.io/s/react-webgl-globe-t90xf9)
 
 ```javascript
+import React, { useEffect, useState } from "react";
+import { Globe } from "react-webgl-globe";
+
 function GlobeContainer() {
   const [data, setData] = useState(null);
 
@@ -76,7 +81,7 @@ function GlobeContainer() {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
           var data = JSON.parse(xhr.responseText);
-          setData(data[0][1]);//rendering only 1990 population
+          setData(data[0][1]);
         }
       }
     };
@@ -84,9 +89,12 @@ function GlobeContainer() {
   }, []);
 
   return (
-    <div>
+    <div className="App">
       <Globe
         data={data}
+        title="population"
+        format="magnitude"
+        animated={false}
         width={800}
         height={480}
       />
@@ -94,5 +102,5 @@ function GlobeContainer() {
   );
 }
 
-export {GlobeContainer};
+export { GlobeContainer };
 ```
