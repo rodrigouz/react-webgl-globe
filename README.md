@@ -1,4 +1,4 @@
-The React WebGL Globe is an open source react component for geographic data visualization. Under the hood uses [WebGL Globe](https://github.com/sw-yx/react-typescript-cheatsheet/) instance created by the Google Data Arts Team.
+The React WebGL Globe is an open source react component for geographic data visualization. Under the hood uses [WebGL Globe](https://experiments.withgoogle.com/chrome/globe) instance created by the Google Data Arts Team.
 
 ![](https://raw.githubusercontent.com/rodrigouz/react-webgl-globe/master/globe.png)
 
